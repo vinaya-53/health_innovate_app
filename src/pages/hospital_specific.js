@@ -7,6 +7,7 @@ import {
 import { app } from '../firebaseConfig'; // Import initialized Firebase app
 import Papa from 'papaparse';
 import './hospital_specific.css';
+import profilepic from '../images/profile.png.jpg';
 
 const HospitalSpecific = () => {
   const [formData, setFormData] = useState({
@@ -132,39 +133,61 @@ const HospitalSpecific = () => {
 
         {/* Display Owner Data */}
         <div className="owner-section">
-          <h3>Supplier Details</h3>
-          {ownerData.length > 0 ? (
-            ownerData.map((owner, index) => (
-              <div key={index} className="owner-card" style={{
-                border: '1px solid #ccc',
-                padding: '10px',
-                borderRadius: '10px',
-                marginBottom: '10px',
-                display: 'flex',
-                alignItems: 'center',
-                boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
-              }}>
-                <p style={{ margin: '0 20px' }}>
-                  <strong>Name:</strong> <span style={{ color: 'blue', fontWeight: 'bold' }}>{owner.name}</span>
-                </p>
-                <p style={{ margin: '0 20px' }}>
-                  <strong>Contact:</strong> {owner.contacts}
-                </p>
-                <p style={{ margin: '0 20px' }}>
-                  <strong>Product:</strong> {owner.product_name}
-                </p>
-                <p style={{ margin: '0 20px' }}>
-                  <strong>Price per Unit:</strong> {owner.price_per_unit}
-                </p>
-                <p style={{ margin: '0 20px' }}>
-                  <strong>Quantity:</strong> {owner.quantity}
-                </p>
-              </div>
-            ))
-          ) : (
-            <p>No supplier details available at the moment.</p>
-          )}
-        </div>
+  <h3>Supplier Details</h3>
+  {ownerData.length > 0 ? (
+  ownerData.map((owner, index) => (
+    <div
+      key={index}
+      className="owner-card"
+      style={{
+        display: "flex",
+        alignItems: "center",
+        border: "1px solid #ccc",
+        padding: "10px",
+        borderRadius: "10px",
+        marginBottom: "10px",
+        boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+      }}
+    >
+      {/* Profile Image */}
+      <img
+        src={profilepic}
+        alt="Profile"
+        className="owner-profile-image"
+        style={{
+          width: "50px",
+          height: "50px",
+          borderRadius: "50%",
+          marginRight: "15px",
+        }}
+      />
+
+      {/* Owner Details */}
+      <div>
+        <p>
+          <strong>{owner.name}</strong>
+        </p>
+        <p>
+          <strong>Contact:</strong> <span>{owner.contacts}</span>
+        </p>
+        <p>
+          <strong>Product:</strong> <span>{owner.product_name}</span>
+        </p>
+        <p>
+          <strong>Price per Unit:</strong> <span>{owner.price_per_unit}</span>
+        </p>
+        <p>
+          <strong>Quantity:</strong> <span>{owner.quantity}</span>
+        </p>
+      </div>
+    </div>
+  ))
+) : (
+  <p>No supplier details available at the moment.</p>
+)}
+
+</div>
+
       </div>
     </div>
   );

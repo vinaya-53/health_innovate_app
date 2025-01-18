@@ -1,6 +1,6 @@
 .login-container {
     font-family: Arial, sans-serif;
-    background-color:#331153;
+    background-color:#4f8da3;
     color: white;
     min-height: 100vh;
     display: flex;
@@ -14,15 +14,15 @@
   
   .login-header h1 {
     font-size: 4vw; /* Adjust font size based on viewport width */
-    color: #b07dfc;
+    color: #154d5b;
     margin-bottom: 2rem;
   }
   
   .login-form {
-    background: #0f0f1f;
+    background: #23567b;
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px rgba(0, 125, 250, 0.5);
     width: 90%; /* Relative width to adjust with screen size */
     max-width: 400px; /* Restrict maximum width for larger screens */
   }
@@ -42,8 +42,8 @@
     padding: 0.8rem;
     border: none;
     border-radius: 5px;
-    background: #2a2a3e;
-    color: white;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
     font-size: 1rem;
     box-sizing: border-box;
   }
@@ -60,10 +60,10 @@
   }
   
   .login-btn {
-    background: linear-gradient(to right,#331153, #b07dfc);
+    background: linear-gradient(to right,#113353, #4c81c2);
     border: none;
     padding: 0.8rem 1.5rem;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
@@ -78,7 +78,7 @@
   .forgot-password {
     display: block;
     margin: 1rem 0;
-    color:  #b07dfc;
+    color:  #1f5993;
     text-decoration: none;
   }
   
@@ -88,7 +88,7 @@
   }
   
   .signup-link a {
-    color: #b07dfc;
+    color: #688fb0;
     text-decoration: none;
   }
   

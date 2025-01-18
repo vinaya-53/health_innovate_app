@@ -22,7 +22,6 @@ const Owner = () => {
     setError("");
     setSuccess("");
 
-    // Input validation (optional)
     if (
       !formData.contacts ||
       !formData.price_per_unit ||
@@ -35,10 +34,10 @@ const Owner = () => {
 
     try {
       const docRef = await addDoc(collection(db, "owner"), {
-        contacts: Number(formData.contacts), // Convert to number
-        price_per_unit: Number(formData.price_per_unit), // Convert to number
+        contacts: Number(formData.contacts),
+        price_per_unit: Number(formData.price_per_unit),
         product_name: formData.product_name,
-        quantity: Number(formData.quantity), // Convert to number
+        quantity: Number(formData.quantity),
       });
       setSuccess(`Document successfully written with ID: ${docRef.id}`);
       setFormData({
@@ -54,13 +53,48 @@ const Owner = () => {
   };
 
   return (
-    <div style={{ maxWidth: "500px", margin: "0 auto", padding: "20px" }}>
-      <h2>Owner Details Form</h2>
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {success && <p style={{ color: "green" }}>{success}</p>}
+    <div
+      style={{
+        maxWidth: "500px",
+        margin: "30px auto",
+        padding: "20px",
+        backgroundColor: "#f9f9f9",
+        borderRadius: "10px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      }}
+    >
+      <h2
+        style={{
+          textAlign: "center",
+          color: "#4a4a4a",
+          marginBottom: "20px",
+          fontFamily: "Arial, sans-serif",
+        }}
+      >
+        Owner Details Form
+      </h2>
+      {error && (
+        <p style={{ color: "red", textAlign: "center", fontWeight: "bold" }}>
+          {error}
+        </p>
+      )}
+      {success && (
+        <p style={{ color: "green", textAlign: "center", fontWeight: "bold" }}>
+          {success}
+        </p>
+      )}
       <form onSubmit={handleSubmit}>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Contacts:</label>
+        <div style={{ marginBottom: "15px" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              color: "#4a4a4a",
+              fontWeight: "bold",
+            }}
+          >
+            Contacts:
+          </label>
           <input
             type="number"
             name="contacts"
@@ -68,11 +102,26 @@ const Owner = () => {
             onChange={handleChange}
             placeholder="Enter contact number"
             required
-            style={{ width: "100%", padding: "8px" }}
+            style={{
+              width: "100%",
+              padding: "10px",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              fontSize: "14px",
+            }}
           />
         </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Price per Unit:</label>
+        <div style={{ marginBottom: "15px" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              color: "#4a4a4a",
+              fontWeight: "bold",
+            }}
+          >
+            Price per Unit:
+          </label>
           <input
             type="number"
             name="price_per_unit"
@@ -80,11 +129,26 @@ const Owner = () => {
             onChange={handleChange}
             placeholder="Enter price per unit"
             required
-            style={{ width: "100%", padding: "8px" }}
+            style={{
+              width: "100%",
+              padding: "10px",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              fontSize: "14px",
+            }}
           />
         </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Product Name:</label>
+        <div style={{ marginBottom: "15px" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              color: "#4a4a4a",
+              fontWeight: "bold",
+            }}
+          >
+            Product Name:
+          </label>
           <input
             type="text"
             name="product_name"
@@ -92,11 +156,26 @@ const Owner = () => {
             onChange={handleChange}
             placeholder="Enter product name"
             required
-            style={{ width: "100%", padding: "8px" }}
+            style={{
+              width: "100%",
+              padding: "10px",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              fontSize: "14px",
+            }}
           />
         </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Quantity:</label>
+        <div style={{ marginBottom: "15px" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "5px",
+              color: "#4a4a4a",
+              fontWeight: "bold",
+            }}
+          >
+            Quantity:
+          </label>
           <input
             type="number"
             name="quantity"
@@ -104,17 +183,27 @@ const Owner = () => {
             onChange={handleChange}
             placeholder="Enter quantity"
             required
-            style={{ width: "100%", padding: "8px" }}
+            style={{
+              width: "100%",
+              padding: "10px",
+              border: "1px solid #ccc",
+              borderRadius: "5px",
+              fontSize: "14px",
+            }}
           />
         </div>
         <button
           type="submit"
           style={{
-            backgroundColor: "#007bff",
+            backgroundColor: "#5c67f2",
             color: "white",
             padding: "10px 20px",
             border: "none",
+            borderRadius: "5px",
+            fontSize: "16px",
+            fontWeight: "bold",
             cursor: "pointer",
+            width: "100%",
           }}
         >
           Submit

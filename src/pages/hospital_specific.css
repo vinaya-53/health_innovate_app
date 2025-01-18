@@ -3,42 +3,145 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    background-color: #daf0ff;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #333;
   }
   
   .main-content {
     width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    padding: 30px;
   }
   
   .calendar-section {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  
+  .calendar-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #004466;
+  }
+  
+  .calendar-section input {
+    width: 80px;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+  }
+  
+  .calendar-section button {
+    background-color: #004466;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+  
+  .calendar-section button:hover {
+    background-color: #006699;
+  }
+  
+  .predicted-resources {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .predicted-resources h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #004466;
+  }
+  
+  .predicted-resources div {
+    margin-bottom: 5px;
   }
   
   .owner-section {
     margin-top: 40px;
-    width: 100%;
-    background-color: #f8f8f8;
+    background-color: #f0f9ff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .owner-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #004466;
   }
   
   .owner-card {
-    background-color: #fff;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .owner-profile-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .owner-card div {
+    flex: 1;
+  }
+  
+  
+  .owner-card:hover {
+    transform: translateY(-5px);
   }
   
   .owner-card p {
-    margin: 5px 10px;
+    margin: 8px 0;
+  }
+  
+  .owner-card p strong {
+    color: #004466;
+  }
+  
+  .owner-card:hover p strong {
+    color: #006699;
+  }
+  
+  .owner-card p span {
+    color: blue;
+    font-weight: bold;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .owner-card {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  
+  .owner-card p {
     flex: 1;
+    margin: 0 20px;
+    font-size: 1.1em;
+  }
+  
+  input,
+  button {
+    font-size: 1em;
   }
   
