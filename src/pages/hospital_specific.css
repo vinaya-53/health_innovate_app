@@ -1,69 +1,44 @@
-
-
 .hospital-specific {
-  display: flex;
-  flex-direction: column;
-  margin: 20px;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.current-values p {
-  margin: 5px 0;
-}
-
-.main-content {
-  display: flex;
-  justify-content: space-between;
-}
-
-.form-section, .calendar-section {
-  width: 48%;
-}
-
-input {
-  width: 100%;
-  margin: 5px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  padding: 10px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-footer {
-  margin-top: 20px;
-}
-
-footer ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-footer ul li {
-  margin: 5px 0;
-}
-
-@media (max-width: 768px) {
-  .main-content {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 20px;
   }
-
-  .form-section, .calendar-section {
+  
+  .main-content {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
   }
-}
+  
+  .calendar-section {
+    margin-bottom: 30px;
+  }
+  
+  .owner-section {
+    margin-top: 40px;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .owner-card {
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+  }
+  
+  .owner-card p {
+    margin: 5px 10px;
+    flex: 1;
+  }
+  
