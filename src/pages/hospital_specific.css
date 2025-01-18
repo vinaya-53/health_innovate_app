@@ -1,0 +1,69 @@
+
+
+.hospital-specific {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.current-values p {
+  margin: 5px 0;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-section, .calendar-section {
+  width: 48%;
+}
+
+input {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+
+  .form-section, .calendar-section {
+    width: 100%;
+  }
+}

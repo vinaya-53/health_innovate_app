@@ -5,7 +5,7 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc,getDoc } from "firebase/firestore";
 import { auth, db } from "../firebaseConfig"; // Firebase configuration
 import "./Login.css"; // CSS file
 
@@ -24,12 +24,33 @@ const Login = () => {
     e.preventDefault();
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      const username = userCredential.user.displayName || "Guest";
-      navigate("/home", { state: { username } }); // Navigate to the home page
+      const user = userCredential.user;
+  
+      // Fetch the user's type and username from Firestore
+      const userDoc = await getDoc(doc(db, "user", email)); // Email as document ID
+      if (userDoc.exists()) {
+        const userData = userDoc.data();
+        const userType = userData.type; // Access the "type" field
+        const username = userData.username; // Access the "username" field
+  
+        // Redirect based on the type
+        if (userType === "hospital") {
+          navigate("/hospital_normal", { state: { hospitalName:username } }); // Pass username as state
+        } else if (userType === "provider") {
+          navigate("/owner", { state: { username } }); // Pass username as state
+        } else {
+          setError("Invalid user type. Please contact support.");
+        }
+      } else {
+        setError("User data not found. Please contact support.");
+      }
     } catch (err) {
+      console.log(err);
       setError("Invalid email or password.");
     }
   };
+  
+  
 
   const handleSignUp = async (e) => {
     e.preventDefault();
