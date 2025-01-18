@@ -1,0 +1,141 @@
+.login-container {
+    font-family: Arial, sans-serif;
+    background-color:#331153;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem; /* Ensure content is not cut off */
+    box-sizing: border-box;
+  }
+  
+  .login-header h1 {
+    font-size: 4vw; /* Adjust font size based on viewport width */
+    color: #b07dfc;
+    margin-bottom: 2rem;
+  }
+  
+  .login-form {
+    background: #0f0f1f;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 90%; /* Relative width to adjust with screen size */
+    max-width: 400px; /* Restrict maximum width for larger screens */
+  }
+  
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #cccccc;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: #2a2a3e;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .remember-me input {
+    margin-right: 0.5rem;
+  }
+  
+  .login-btn {
+    background: linear-gradient(to right,#331153, #b07dfc);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%; /* Adjust button size to form width */
+  }
+  
+  .login-btn:hover {
+    opacity: 0.8;
+  }
+  
+  .forgot-password {
+    display: block;
+    margin: 1rem 0;
+    color:  #b07dfc;
+    text-decoration: none;
+  }
+  
+  .signup-link p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .signup-link a {
+    color: #b07dfc;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media Queries for Different Screen Sizes */
+  
+  /* For tablets and smaller laptops (768px and below) */
+  @media (max-width: 768px) {
+    .login-header h1 {
+      font-size: 5vw; /* Slightly larger text for smaller screens */
+    }
+  
+    .login-form {
+      padding: 1.5rem;
+      max-width: 90%; /* Occupy more width on smaller screens */
+    }
+  
+    .input-group input {
+      font-size: 0.9rem;
+    }
+  
+    .login-btn {
+      font-size: 0.9rem;
+      padding: 0.7rem;
+    }
+  }
+  
+  /* For mobile devices (480px and below) */
+  @media (max-width: 480px) {
+    .login-header h1 {
+      font-size: 6vw; /* Further increase text size for small screens */
+    }
+  
+    .login-form {
+      padding: 1rem;
+    }
+  
+    .input-group input {
+      font-size: 0.8rem;
+    }
+  
+    .login-btn {
+      font-size: 0.8rem;
+      padding: 0.6rem;
+    }
+  }
+  
